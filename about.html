@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <title>ABC Tech - About Us</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                background-image: url('assets/img/home-bg.jpg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: fixed;
+                margin: 0;
+            }
+            img{
+                width: 100px;
+                height: 90px;
+            }
+            a:link, a:visited {
+                color:#0072ff;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover{
+                background-color:#00c6ff;
+                border-radius: 40px;
+            }
+            .header{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 14px 24px;
+            }
+            .search-box{
+                position: relative;
+                flex: 0 1 240px;
+                min-width: 140px;
+            }
+            .search-box input[type="search"]{
+                width: 100%;
+                padding: 8px 36px 8px 14px;
+                border-radius: 20px;
+                border: 1px solid #ccc;
+                outline: none;
+            }
+            .search-box input[type="search"]:focus{
+                border-color: #00c6ff;
+                box-shadow: 0 0 0 3px rgba(0,198,255,.15);
+            }
+            .search-box i{
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #0072ff;
+                pointer-events: none;
+            }
+            i{
+                color: black;
+            }
+            h1{
+                display: inline;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                color: red;
+                font-size: 40px;
+            }
+            h3{
+                font-style: italic;
+                font-family:'Times New Roman', Times, serif;
+                color: deeppink;
+                line-height: 0.4px;
+                font-size: 30px;
+            }
+            .nav{
+                flex: 1 1 100%;
+                padding: 0;
+            }
+            ul{
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                gap: 4px;
+            }
+            li{
+                display: inline-flex;
+                padding: 0;
+                font-size: 15px;
+            }
+            .content {
+                max-width: 800px;
+                margin: 40px auto;
+                background: rgba(255,255,255,0.92);
+                border-radius: 10px;
+                padding: 30px 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                box-shadow: 0 0 30px rgba(0,0,0,0.4);
+            }
+            .content h2 {
+                color: rgb(236, 106, 14);
+                font-family: 'Times New Roman', Times, serif;
+                font-style: italic;
+                margin-bottom: 15px;
+            }
+            .content p {
+                line-height: 1.6;
+                color: #222;
+                margin-bottom: 15px;
+            }
+            .content ul.values {
+                list-style-type: disc;
+                padding-left: 25px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            .content ul.values li {
+                display: list-item;
+                font-size: 16px;
+                color: #222;
+                padding: 3px 0;
+            }
+            .brand{
+                display:flex;
+                align-items:center;
+                gap:14px;
+                flex: 0 0 auto;
+            }
+            .brand-mark{
+                width:60px;
+                height:56px;
+                clip-path:polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                flex-shrink:0;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#00c6ff,#0072ff,#7b2ff7);
+                background-size:200% 200%;
+                animation:brandGlow 6s ease infinite, brandPulse 3s ease-in-out infinite;
+                color:#fff;
+                font-family:'Arial Black', Arial, sans-serif;
+                font-style:normal;
+                font-weight:bold;
+                letter-spacing:-1px;
+                font-size:20px;
+                box-shadow:0 4px 18px rgba(0,114,255,.5);
+            }
+            .brand-text{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            }
+            .brand-name{
+                display:block;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                font-size:40px;
+                font-weight:bold;
+                letter-spacing:2px;
+                margin:0;
+                line-height:1;
+                background:linear-gradient(90deg,#00c6ff,#0072ff,#7b2ff7,#00c6ff);
+                background-size:300% auto;
+                -webkit-background-clip:text;
+                background-clip:text;
+                -webkit-text-fill-color:transparent;
+                animation:brandShine 5s linear infinite;
+            }
+            .brand-dot{
+                color:#00c6ff;
+                -webkit-text-fill-color:#00c6ff;
+            }
+            .brand-tag{
+                display:block;
+                margin:2px 0 0;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                font-size:15px;
+                letter-spacing:1px;
+                color:#00c6ff;
+                line-height:normal;
+            }
+            @keyframes brandShine{
+                to{ background-position:300% center; }
+            }
+            @keyframes brandGlow{
+                0%,100%{ background-position:0% 50%; }
+                50%{ background-position:100% 50%; }
+            }
+            @keyframes brandPulse{
+                0%,100%{ box-shadow:0 4px 18px rgba(0,114,255,.5); }
+                50%{ box-shadow:0 4px 28px rgba(0,198,255,.8); }
+            }
+
+            @media (max-width: 640px){
+                .header{
+                    justify-content: center;
+                    text-align: center;
+                }
+                .brand{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .brand-name{
+                    font-size: 28px;
+                }
+                .brand-tag{
+                    font-size: 12px;
+                }
+                .brand-mark{
+                    width: 48px;
+                    height: 44px;
+                    font-size: 16px;
+                }
+                .search-box{
+                    flex: 1 1 100%;
+                }
+                li{
+                    font-size: 13px;
+                }
+                .content{
+                    width: 92%;
+                    margin: 24px auto;
+                    padding: 22px;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+         <div class="header">
+            <div class="brand">
+                <div class="brand-mark">AT</div>
+                <div class="brand-text">
+                    <h1 class="brand-name">ABC Tech<span class="brand-dot">.</span></h1>
+                    <h3 class="brand-tag">Powering&nbsp;Ideas&nbsp;Into&nbsp;Code</h3>
+                </div>
+            </div>
+               <div class="search-box">
+                <input type="search" placeholder="Type to search...">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="nav">
+            <ul>
+<li><a href="index.html"> HOME </a></li>
+                <li><a href="about.html"> ABOUT US</a></li>
+                <li><a href="services.html"> SERVICES </a></li>
+                <li><a href="contact.html"> CONTACT US </a></li>
+                <li><a href="login.html"> LOGIN </a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>About Us</h2>
+            <p>
+                ABC Tech is a software development company focused on building
+                clean, reliable, and practical digital solutions. We work with
+                businesses of every size to turn ideas into working software —
+                from simple websites to full-scale applications.
+            </p>
+            <p>
+                Our team blends technical skill with a straightforward approach:
+                we listen to what a client actually needs, plan a solution that
+                fits their budget and timeline, and deliver software that's easy
+                to use and easy to maintain.
+            </p>
+            <h2>What We Value</h2>
+            <ul class="values">
+                <li>Clear communication with every client, at every stage</li>
+                <li>Clean, maintainable code that's built to last</li>
+                <li>Honest timelines and transparent pricing</li>
+                <li>Ongoing support after a project ships</li>
+            </ul>
+        </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

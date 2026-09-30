@@ -1,0 +1,312 @@
+<html>
+    <head>
+        <title>ABC Tech - Contact Us</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                background-image: url('assets/img/home-bg.jpg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: fixed;
+                margin: 0;
+            }
+            img{
+                width: 100px;
+                height: 90px;
+            }
+            a:link, a:visited {
+                color:#0072ff;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover{
+                background-color:#00c6ff;
+                border-radius: 40px;
+            }
+            .header{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 14px 24px;
+            }
+            .search-box{
+                position: relative;
+                flex: 0 1 240px;
+                min-width: 140px;
+            }
+            .search-box input[type="search"]{
+                width: 100%;
+                padding: 8px 36px 8px 14px;
+                border-radius: 20px;
+                border: 1px solid #ccc;
+                outline: none;
+            }
+            .search-box input[type="search"]:focus{
+                border-color: #00c6ff;
+                box-shadow: 0 0 0 3px rgba(0,198,255,.15);
+            }
+            .search-box i{
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #0072ff;
+                pointer-events: none;
+            }
+            i{
+                color: black;
+            }
+            h1{
+                display: inline;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                color: red;
+                font-size: 40px;
+            }
+            h3{
+                font-style: italic;
+                font-family:'Times New Roman', Times, serif;
+                color: deeppink;
+                line-height: 0.4px;
+                font-size: 30px;
+            }
+            .nav{
+                flex: 1 1 100%;
+                padding: 0;
+            }
+            ul{
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                gap: 4px;
+            }
+            li{
+                display: inline-flex;
+                padding: 0;
+                font-size: 15px;
+            }
+            .content {
+                max-width: 600px;
+                margin: 40px auto;
+                background: rgba(255,255,255,0.92);
+                border-radius: 10px;
+                padding: 30px 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                box-shadow: 0 0 30px rgba(0,0,0,0.4);
+            }
+            .content h2 {
+                color: rgb(236, 106, 14);
+                font-family: 'Times New Roman', Times, serif;
+                font-style: italic;
+                margin-bottom: 15px;
+            }
+            .contact-info {
+                margin-bottom: 20px;
+                color: #333;
+                line-height: 1.8;
+            }
+            .contact-info i {
+                color: rgb(236, 106, 14);
+                width: 20px;
+                text-align: center;
+            }
+            .contact-form label {
+                display: block;
+                margin-top: 12px;
+                margin-bottom: 4px;
+                font-size: 14px;
+                color: #333;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+            .contact-form textarea {
+                min-height: 100px;
+                resize: vertical;
+            }
+            .contact-form button {
+                margin-top: 18px;
+                width: 100%;
+                height: 42px;
+                background: #00c2a7;
+                color: #fff;
+                font-size: 1em;
+                font-weight: 500;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .contact-form button:hover {
+                background: rgb(236, 106, 14);
+            }
+            .brand{
+                display:flex;
+                align-items:center;
+                gap:14px;
+                flex: 0 0 auto;
+            }
+            .brand-mark{
+                width:60px;
+                height:56px;
+                clip-path:polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+                flex-shrink:0;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(135deg,#00c6ff,#0072ff,#7b2ff7);
+                background-size:200% 200%;
+                animation:brandGlow 6s ease infinite, brandPulse 3s ease-in-out infinite;
+                color:#fff;
+                font-family:'Arial Black', Arial, sans-serif;
+                font-style:normal;
+                font-weight:bold;
+                letter-spacing:-1px;
+                font-size:20px;
+                box-shadow:0 4px 18px rgba(0,114,255,.5);
+            }
+            .brand-text{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            }
+            .brand-name{
+                display:block;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                font-size:40px;
+                font-weight:bold;
+                letter-spacing:2px;
+                margin:0;
+                line-height:1;
+                background:linear-gradient(90deg,#00c6ff,#0072ff,#7b2ff7,#00c6ff);
+                background-size:300% auto;
+                -webkit-background-clip:text;
+                background-clip:text;
+                -webkit-text-fill-color:transparent;
+                animation:brandShine 5s linear infinite;
+            }
+            .brand-dot{
+                color:#00c6ff;
+                -webkit-text-fill-color:#00c6ff;
+            }
+            .brand-tag{
+                display:block;
+                margin:2px 0 0;
+                font-style:italic;
+                font-family:'Times New Roman', Times, serif;
+                font-size:15px;
+                letter-spacing:1px;
+                color:#00c6ff;
+                line-height:normal;
+            }
+            @keyframes brandShine{
+                to{ background-position:300% center; }
+            }
+            @keyframes brandGlow{
+                0%,100%{ background-position:0% 50%; }
+                50%{ background-position:100% 50%; }
+            }
+            @keyframes brandPulse{
+                0%,100%{ box-shadow:0 4px 18px rgba(0,114,255,.5); }
+                50%{ box-shadow:0 4px 28px rgba(0,198,255,.8); }
+            }
+
+            @media (max-width: 640px){
+                .header{
+                    justify-content: center;
+                    text-align: center;
+                }
+                .brand{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .brand-name{
+                    font-size: 28px;
+                }
+                .brand-tag{
+                    font-size: 12px;
+                }
+                .brand-mark{
+                    width: 48px;
+                    height: 44px;
+                    font-size: 16px;
+                }
+                .search-box{
+                    flex: 1 1 100%;
+                }
+                li{
+                    font-size: 13px;
+                }
+                .content{
+                    width: 92%;
+                    margin: 24px auto;
+                    padding: 22px;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+         <div class="header">
+            <div class="brand">
+                <div class="brand-mark">AT</div>
+                <div class="brand-text">
+                    <h1 class="brand-name">ABC Tech<span class="brand-dot">.</span></h1>
+                    <h3 class="brand-tag">Powering&nbsp;Ideas&nbsp;Into&nbsp;Code</h3>
+                </div>
+            </div>
+               <div class="search-box">
+                <input type="search" placeholder="Type to search...">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="nav">
+            <ul>
+<li><a href="index.html"> HOME </a></li>
+                <li><a href="about.html"> ABOUT </a></li>
+                <li><a href="services.html"> SERVICES </a></li>
+                <li><a href="contact.html"> CONTACT US </a></li>
+                <li><a href="login.html"> LOGIN </a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div><i class="fa fa-envelope"></i>&nbsp; abc.tech@gmail.com</div>
+                <div><i class="fa fa-phone"></i>&nbsp; +91 628199886</div>
+                <div><i class="fa fa-map-marker"></i>&nbsp; Puttur, Tirupati District, Andhra Pradesh</div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="How can we help?" required></textarea>
+
+                <button type="submit">Send Message</button>
+                <div class="form-status" id="contactStatus"></div>
+            </form>
+        </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

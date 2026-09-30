@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABC Tech</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.30),
+                    rgba(0, 0, 0, 0.30)
+                ),
+                url('assets/img/home-bg.jpg');
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            font-family: Arial, sans-serif;
+
+            animation: pageFade 1.2s ease;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: rgba(0, 198, 255, 0.15);
+
+            filter: blur(80px);
+
+            top: 10%;
+            left: -100px;
+
+            z-index: -1;
+
+            animation:
+                floatGlow 7s ease-in-out infinite alternate;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(123, 47, 247, 0.15);
+
+            filter: blur(80px);
+
+            bottom: 5%;
+            right: -100px;
+
+            z-index: -1;
+
+            animation:
+                floatGlow2 8s ease-in-out infinite alternate;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 18px 30px;
+
+            animation:
+                slideDown 1s ease;
+        }
+
+
+        /* =========================
+           BRAND
+        ========================= */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            flex: 0 0 auto;
+
+            animation:
+                slideLeft 1s ease;
+        }
+
+
+        .brand-mark {
+
+            width: 60px;
+            height: 56px;
+
+            clip-path: polygon(
+                25% 0%,
+                75% 0%,
+                100% 50%,
+                75% 100%,
+                25% 100%,
+                0% 50%
+            );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00c6ff,
+                    #0072ff,
+                    #7b2ff7
+                );
+
+            background-size: 200% 200%;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            font-weight: bold;
+
+            font-size: 20px;
+
+            box-shadow:
+                0 4px 18px rgba(0,114,255,.5);
+
+            animation:
+                brandGlow 5s ease infinite,
+                brandPulse 3s ease-in-out infinite,
+                rotateMark 6s ease-in-out infinite;
+
+            transition: 0.3s;
+        }
+
+
+        .brand-mark:hover {
+
+            transform:
+                scale(1.15)
+                rotate(10deg);
+
+            box-shadow:
+                0 0 35px #00c6ff;
+        }
+
+
+        /* =========================
+           BRAND TEXT
+        ========================= */
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .brand-name {
+
+            display: block;
+
+            font-style: italic;
+
+            font-family:
+                'Times New Roman',
+                Times,
+                serif;
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            line-height: 1;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #0072ff,
+                    #7b2ff7,
+                    #00c6ff
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                brandShine 4s linear infinite;
+        }
+
+
+        .brand-dot {
+
+            color: #00c6ff;
+
+            -webkit-text-fill-color: #00c6ff;
+
+            animation:
+                dotBlink 1.5s infinite;
+        }
+
+
+        .brand-tag {
+
+            margin-top: 5px;
+
+            font-style: italic;
+
+            font-family:
+                'Times New Roman',
+                Times,
+                serif;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+
+            color: #00c6ff;
+
+            animation:
+                tagFade 2s ease;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+
+            position: relative;
+
+            flex: 0 1 240px;
+
+            min-width: 140px;
+
+            animation:
+                slideRight 1.2s ease;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding:
+                10px
+                40px
+                10px
+                15px;
+
+            border-radius: 25px;
+
+            border: 1px solid #ccc;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,0.92);
+
+            transition: 0.4s;
+        }
+
+
+        .search-box input:focus {
+
+            border-color: #00c6ff;
+
+            transform: scale(1.04);
+
+            box-shadow:
+                0 0 10px rgba(0,198,255,.7),
+                0 0 25px rgba(0,114,255,.3);
+        }
+
+
+        .search-box i {
+
+            position: absolute;
+
+            right: 13px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #0072ff;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+        }
+
+
+        .search-box:focus-within i {
+
+            color: #00c6ff;
+
+            transform:
+                translateY(-50%)
+                scale(1.2)
+                rotate(15deg);
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .nav {
+
+            flex: 1 1 100%;
+
+            padding-top: 5px;
+
+            animation:
+                navAppear 1.5s ease;
+        }
+
+
+        .nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 5px;
+        }
+
+
+        .nav li {
+
+            display: inline-flex;
+
+            font-size: 15px;
+        }
+
+
+        .nav a {
+
+            color: white;
+
+            padding: 10px 15px;
+
+            text-decoration: none;
+
+            position: relative;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav a:hover {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #0072ff
+                );
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,198,255,.5);
+        }
+
+
+        /* Navigation underline */
+
+        .nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 4px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: #00c6ff;
+
+            transform:
+                translateX(-50%);
+
+            transition: 0.3s;
+        }
+
+
+        .nav a:hover::after {
+
+            width: 60%;
+        }
+
+
+        /* =========================
+           HERO SECTION
+           LEFT SIDE
+        ========================= */
+
+        .hero {
+
+            min-height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+            text-align: left;
+
+            padding:
+                50px
+                0
+                50px
+                12%;
+
+            color: white;
+
+            animation:
+                heroAppear 1.5s ease;
+        }
+
+
+        /* Welcome */
+
+        .hero-small {
+
+            font-size: 18px;
+
+            letter-spacing: 6px;
+
+            color: #00c6ff;
+
+            margin-bottom: 15px;
+
+            animation:
+                heroSmall 1.5s ease;
+        }
+
+
+        /* Main ABC Tech */
+
+        .hero h2 {
+
+            font-family:
+                'Arial Black',
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(50px, 8vw, 90px);
+
+            margin-bottom: 15px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #ffffff,
+                    #7b2ff7,
+                    #00c6ff
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                heroGradient 4s linear infinite,
+                heroFloat 3s ease-in-out infinite;
+        }
+
+
+        .hero-dot {
+
+            -webkit-text-fill-color:
+                #00c6ff;
+        }
+
+
+        /* =========================
+           MOVING TEXT
+        ========================= */
+
+        .hero-moving {
+
+            height: 60px;
+
+            overflow: hidden;
+
+            font-size:
+                clamp(28px, 5vw, 45px);
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero-moving span {
+
+            display: block;
+
+            height: 60px;
+
+            line-height: 60px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #ffffff,
+                    #7b2ff7
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color:
+                transparent;
+        }
+
+
+        .hero-moving span:nth-child(1) {
+
+            animation:
+                wordOne 6s infinite;
+        }
+
+
+        .hero-moving span:nth-child(2) {
+
+            animation:
+                wordTwo 6s infinite;
+        }
+
+
+        .hero-moving span:nth-child(3) {
+
+            animation:
+                wordThree 6s infinite;
+        }
+
+
+        /* Description */
+
+        .hero-description {
+
+            font-size: 18px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 30px;
+
+            color: white;
+
+            animation:
+                descriptionFade 2s ease;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .hero-btn {
+
+            display: inline-block;
+
+            padding:
+                14px
+                28px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00c6ff,
+                    #0072ff
+                );
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,114,255,.5);
+
+            transition: 0.3s;
+
+            animation:
+                buttonAppear 2s ease;
+        }
+
+
+        .hero-btn:hover {
+
+            color: white;
+
+            transform:
+                translateY(-5px)
+                scale(1.06);
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,198,255,.8);
+        }
+
+
+        .hero-btn i {
+
+            margin-left: 8px;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-btn:hover i {
+
+            transform:
+                translateX(6px);
+        }
+
+
+        /* =========================
+           GENERAL ANIMATIONS
+        ========================= */
+
+        @keyframes pageFade {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes slideDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes slideLeft {
+
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        @keyframes slideRight {
+
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        @keyframes navAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes heroAppear {
+
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        @keyframes heroSmall {
+
+            from {
+                opacity: 0;
+                letter-spacing: 15px;
+            }
+
+            to {
+                opacity: 1;
+                letter-spacing: 6px;
+            }
+        }
+
+
+        @keyframes heroGradient {
+
+            to {
+                background-position:
+                    300% center;
+            }
+        }
+
+
+        @keyframes heroFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-10px);
+            }
+        }
+
+
+        @keyframes descriptionFade {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes buttonAppear {
+
+            from {
+                opacity: 0;
+                transform:
+                    scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    scale(1);
+            }
+        }
+
+
+        /* =========================
+           MOVING WORDS
+        ========================= */
+
+        @keyframes wordOne {
+
+            0%,
+            30% {
+                transform:
+                    translateY(0);
+            }
+
+            33%,
+            100% {
+                transform:
+                    translateY(-60px);
+            }
+        }
+
+
+        @keyframes wordTwo {
+
+            0%,
+            33% {
+                transform:
+                    translateY(60px);
+            }
+
+            36%,
+            63% {
+                transform:
+                    translateY(0);
+            }
+
+            66%,
+            100% {
+                transform:
+                    translateY(-60px);
+            }
+        }
+
+
+        @keyframes wordThree {
+
+            0%,
+            66% {
+                transform:
+                    translateY(60px);
+            }
+
+            69%,
+            96% {
+                transform:
+                    translateY(0);
+            }
+
+            100% {
+                transform:
+                    translateY(60px);
+            }
+        }
+
+
+        /* =========================
+           BRAND ANIMATIONS
+        ========================= */
+
+        @keyframes brandShine {
+
+            to {
+                background-position:
+                    300% center;
+            }
+        }
+
+
+        @keyframes brandGlow {
+
+            0%,
+            100% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+        }
+
+
+        @keyframes brandPulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 4px 18px
+                    rgba(0,114,255,.5);
+            }
+
+            50% {
+                box-shadow:
+                    0 4px 30px
+                    rgba(0,198,255,.9);
+            }
+        }
+
+
+        @keyframes rotateMark {
+
+            0%,
+            85%,
+            100% {
+                transform:
+                    rotate(0deg);
+            }
+
+            90% {
+                transform:
+                    rotate(8deg);
+            }
+
+            95% {
+                transform:
+                    rotate(-8deg);
+            }
+        }
+
+
+        @keyframes dotBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+
+        @keyframes tagFade {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        @keyframes floatGlow {
+
+            from {
+                transform:
+                    translate(0, 0);
+            }
+
+            to {
+                transform:
+                    translate(180px, 80px);
+            }
+        }
+
+
+        @keyframes floatGlow2 {
+
+            from {
+                transform:
+                    translate(0, 0);
+            }
+
+            to {
+                transform:
+                    translate(-150px, -100px);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 640px) {
+
+            .header {
+
+                justify-content: center;
+
+                text-align: center;
+
+                padding: 15px;
+            }
+
+
+            .brand {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .brand-name {
+
+                font-size: 30px;
+            }
+
+
+            .brand-tag {
+
+                font-size: 12px;
+            }
+
+
+            .brand-mark {
+
+                width: 48px;
+
+                height: 44px;
+
+                font-size: 16px;
+            }
+
+
+            .search-box {
+
+                flex: 1 1 100%;
+
+                max-width: 350px;
+            }
+
+
+            .nav a {
+
+                padding: 8px;
+
+                font-size: 12px;
+            }
+
+
+            /* Center hero on mobile */
+
+            .hero {
+
+                min-height: 500px;
+
+                align-items: center;
+
+                text-align: center;
+
+                padding:
+                    40px
+                    20px;
+            }
+
+
+            .hero-small {
+
+                font-size: 14px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 50px;
+            }
+
+
+            .hero-moving {
+
+                font-size: 28px;
+
+                height: 50px;
+            }
+
+
+            .hero-moving span {
+
+                height: 50px;
+
+                line-height: 50px;
+            }
+
+
+            .hero-description {
+
+                font-size: 14px;
+
+                letter-spacing: 2px;
+            }
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                AT
+            </div>
+
+
+            <div class="brand-text">
+
+                <h1 class="brand-name">
+
+                    ABC Tech<span class="brand-dot">.</span>
+
+                </h1>
+
+
+                <h3 class="brand-tag">
+
+                    Powering&nbsp;Ideas&nbsp;Into&nbsp;Code
+
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                placeholder="Type to search...">
+
+            <i class="fa fa-search"></i>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        SERVICES
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTACT US
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        LOGIN
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+
+        <p class="hero-small">
+            WELCOME TO
+        </p>
+
+
+        <h2>
+
+            ABC Tech<span class="hero-dot">.</span>
+
+        </h2>
+
+
+        <!-- MOVING TEXT -->
+
+        <div class="hero-moving">
+
+            <span>
+                Innovate.
+            </span>
+
+            <span>
+                Develop.
+            </span>
+
+            <span>
+                Transform.
+            </span>
+
+        </div>
+
+
+        <p class="hero-description">
+
+            Powering Ideas Into Code
+
+        </p>
+
+
+        <a
+            href="services.html"
+            class="hero-btn">
+
+            Explore Services
+
+            <i class="fa fa-arrow-right"></i>
+
+        </a>
+
+
+    </section>
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

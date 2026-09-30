@@ -1,0 +1,14 @@
+/* Shared additions used by every page (page-specific styles stay inline in each HTML file) */
+
+.form-status {
+    display: none;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+.form-status.ok  { display: block; background: rgba(74,222,128,.18); color: #bbf7d0; border: 1px solid rgba(74,222,128,.5); }
+.form-status.err { display: block; background: rgba(255,85,85,.18);  color: #fecaca; border: 1px solid rgba(255,85,85,.5); }
+
+button:disabled { opacity: .65; cursor: not-allowed; }

@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ABC Tech - Services</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* =========================
+       BODY
+    ========================= */
+
+    body {
+
+        min-height: 100vh;
+
+        background:
+            linear-gradient(
+                rgba(0, 114, 255, 0.18),
+                rgba(123, 47, 247, 0.18)
+            ),
+            url('assets/img/home-bg.jpg');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+
+        font-family: Arial, Helvetica, sans-serif;
+
+        color: #222;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 35px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.12);
+
+    position: relative;
+    z-index: 100;
+}
+
+
+
+    /* =========================
+       BRAND
+    ========================= */
+
+    .brand {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        flex: 0 0 auto;
+    }
+
+
+    .brand-mark {
+
+        width: 60px;
+        height: 56px;
+
+        clip-path: polygon(
+            25% 0%,
+            75% 0%,
+            100% 50%,
+            75% 100%,
+            25% 100%,
+            0% 50%
+        );
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                #00c6ff,
+                #0072ff,
+                #7b2ff7
+            );
+
+        background-size: 200% 200%;
+
+        animation:
+            brandGlow 6s ease infinite,
+            brandPulse 3s ease-in-out infinite;
+
+        color: white;
+
+        font-family: 'Arial Black', Arial, sans-serif;
+
+        font-size: 20px;
+
+        font-weight: bold;
+
+        box-shadow:
+            0 4px 18px rgba(0, 114, 255, 0.5);
+    }
+
+
+    .brand-text {
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .brand-name {
+
+        font-family:
+            'Times New Roman',
+            Times,
+            serif;
+
+        font-size: 40px;
+
+        font-style: italic;
+
+        font-weight: bold;
+
+        letter-spacing: 2px;
+
+        line-height: 1;
+
+        background:
+            linear-gradient(
+                90deg,
+                #00c6ff,
+                #0072ff,
+                #7b2ff7,
+                #00c6ff
+            );
+
+        background-size: 300% auto;
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+
+        animation:
+            brandShine 5s linear infinite;
+    }
+
+
+    .brand-dot {
+
+        color: #00c6ff;
+
+        -webkit-text-fill-color: #00c6ff;
+    }
+
+
+    .brand-tag {
+
+        margin-top: 5px;
+
+        font-family:
+            'Times New Roman',
+            Times,
+            serif;
+
+        font-size: 14px;
+
+        font-style: italic;
+
+        letter-spacing: 1px;
+
+        color: #00aeea;
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .search-box {
+
+        position: relative;
+
+        width: 250px;
+    }
+
+
+    .search-box input {
+
+        width: 100%;
+
+        padding: 12px 42px 12px 16px;
+
+        border-radius: 25px;
+
+        border: 1px solid #ddd;
+
+        outline: none;
+
+        background: rgba(255, 255, 255, 0.95);
+
+        font-size: 14px;
+
+        transition: 0.3s;
+    }
+
+
+    .search-box input:focus {
+
+        border-color: #00c6ff;
+
+        box-shadow:
+            0 0 0 4px rgba(0, 198, 255, 0.12);
+    }
+
+
+    .search-box i {
+
+        position: absolute;
+
+        right: 15px;
+
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        color: #0072ff;
+
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav {
+
+        flex: 1 1 100%;
+    }
+
+
+    .nav ul {
+
+        list-style: none;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+
+    .nav li {
+
+        display: inline-flex;
+    }
+
+
+    .nav a {
+
+        color: #0072ff;
+
+        text-decoration: none;
+
+        padding: 10px 16px;
+
+        border-radius: 25px;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+    }
+
+
+    .nav a:hover,
+    .nav a.active {
+
+        background:
+            linear-gradient(
+                135deg,
+                #00c6ff,
+                #0072ff
+            );
+
+        color: white;
+
+        box-shadow:
+            0 6px 18px rgba(0, 114, 255, 0.3);
+
+        transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .services-hero {
+
+        max-width: 1100px;
+
+        margin: 45px auto 25px;
+
+        padding: 45px 25px;
+
+        text-align: center;
+
+        background:
+            rgba(255, 255, 255, 0.82);
+
+        backdrop-filter: blur(12px);
+
+        border-radius: 25px;
+
+        box-shadow:
+            0 15px 45px rgba(0, 0, 0, 0.15);
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .services-hero::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 220px;
+        height: 220px;
+
+        background:
+            rgba(0, 198, 255, 0.15);
+
+        border-radius: 50%;
+
+        top: -100px;
+
+        left: -80px;
+
+        animation: floatCircle 6s ease-in-out infinite;
+    }
+
+
+    .services-hero::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 200px;
+        height: 200px;
+
+        background:
+            rgba(123, 47, 247, 0.12);
+
+        border-radius: 50%;
+
+        bottom: -100px;
+
+        right: -80px;
+
+        animation: floatCircle 7s ease-in-out infinite reverse;
+    }
+
+
+    .hero-content {
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    .hero-badge {
+
+        display: inline-block;
+
+        padding: 7px 16px;
+
+        border-radius: 30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #00c6ff,
+                #0072ff
+            );
+
+        color: white;
+
+        font-size: 12px;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 15px;
+
+        box-shadow:
+            0 5px 15px rgba(0, 114, 255, 0.25);
+    }
+
+
+    .services-hero h1 {
+
+        font-family:
+            'Times New Roman',
+            Times,
+            serif;
+
+        font-style: italic;
+
+        font-size: 45px;
+
+        margin-bottom: 12px;
+
+        background:
+            linear-gradient(
+                90deg,
+                #0072ff,
+                #7b2ff7,
+                #00c6ff
+            );
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .services-hero p {
+
+        max-width: 700px;
+
+        margin: auto;
+
+        color: #666;
+
+        line-height: 1.7;
+
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .content {
+
+        max-width: 1100px;
+
+        margin: 25px auto 50px;
+
+        padding: 35px;
+
+        background:
+            rgba(255, 255, 255, 0.93);
+
+        backdrop-filter: blur(12px);
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.18);
+    }
+
+
+    .section-heading {
+
+        text-align: center;
+
+        margin-bottom: 30px;
+    }
+
+
+    .section-heading h2 {
+
+        color: #ec6a0e;
+
+        font-family:
+            'Times New Roman',
+            Times,
+            serif;
+
+        font-style: italic;
+
+        font-size: 32px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .section-heading p {
+
+        color: #777;
+
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       SERVICES GRID
+    ========================= */
+
+    .service-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 22px;
+    }
+
+
+    /* =========================
+       SERVICE CARD
+    ========================= */
+
+    .service-card {
+
+        position: relative;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff,
+                #f7fbff
+            );
+
+        border: 1px solid #e7eef5;
+
+        border-radius: 16px;
+
+        padding: 28px 22px;
+
+        text-align: center;
+
+        overflow: hidden;
+
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease;
+
+        animation:
+            cardAppear 0.7s ease both;
+    }
+
+
+    .service-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 90px;
+        height: 90px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(0, 198, 255, 0.08);
+
+        top: -45px;
+
+        right: -35px;
+
+        transition: 0.4s;
+    }
+
+
+    .service-card:hover {
+
+        transform:
+            translateY(-10px)
+            scale(1.015);
+
+        border-color: #00c6ff;
+
+        box-shadow:
+            0 18px 35px rgba(0, 114, 255, 0.18);
+    }
+
+
+    .service-card:hover::before {
+
+        transform: scale(2.2);
+
+        background:
+            rgba(0, 198, 255, 0.12);
+    }
+
+
+    /* =========================
+       FEATURED CARD
+    ========================= */
+
+    .service-card.featured {
+
+        border:
+            2px solid #00c6ff;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff,
+                #eefaff
+            );
+    }
+
+
+    .featured-label {
+
+        position: absolute;
+
+        top: 12px;
+
+        right: 12px;
+
+        padding: 5px 10px;
+
+        border-radius: 20px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ff9800,
+                #ec6a0e
+            );
+
+        color: white;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .service-icon {
+
+        width: 65px;
+
+        height: 65px;
+
+        margin: 0 auto 16px;
+
+        border-radius: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background:
+            linear-gradient(
+                135deg,
+                #e8f9ff,
+                #eef0ff
+            );
+
+        box-shadow:
+            0 8px 20px rgba(0, 114, 255, 0.1);
+
+        transition: 0.35s;
+    }
+
+
+    .service-icon i {
+
+        font-size: 29px;
+
+        color: #0072ff;
+
+        transition: 0.35s;
+    }
+
+
+    .service-card:hover .service-icon {
+
+        transform:
+            rotate(-5deg)
+            scale(1.1);
+
+        background:
+            linear-gradient(
+                135deg,
+                #00c6ff,
+                #0072ff
+            );
+    }
+
+
+    .service-card:hover .service-icon i {
+
+        color: white;
+
+        transform:
+            rotate(5deg);
+    }
+
+
+    /* =========================
+       CARD CONTENT
+    ========================= */
+
+    .service-card h3 {
+
+        font-size: 19px;
+
+        color: #222;
+
+        margin-bottom: 10px;
+    }
+
+
+    .service-card p {
+
+        font-size: 13px;
+
+        color: #666;
+
+        line-height: 1.6;
+
+        min-height: 63px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .service-tag {
+
+        display: inline-block;
+
+        padding: 5px 11px;
+
+        border-radius: 20px;
+
+        background: #edf8ff;
+
+        color: #0072ff;
+
+        font-size: 10px;
+
+        font-weight: bold;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* =========================
+       LEARN MORE
+    ========================= */
+
+    .learn-more {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        color: #0072ff;
+
+        text-decoration: none;
+
+        font-size: 12px;
+
+        font-weight: bold;
+
+        padding: 7px 13px;
+
+        border-radius: 20px;
+
+        transition: 0.3s;
+    }
+
+
+    .learn-more:hover {
+
+        background:
+            #0072ff;
+
+        color: white;
+
+        transform: translateX(4px);
+    }
+
+
+    .learn-more i {
+
+        transition: 0.3s;
+    }
+
+
+    .learn-more:hover i {
+
+        transform:
+            translateX(4px);
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 15px;
+
+        margin-top: 35px;
+
+        padding-top: 30px;
+
+        border-top:
+            1px solid #eee;
+    }
+
+
+    .stat {
+
+        text-align: center;
+
+        padding: 15px;
+    }
+
+
+    .stat i {
+
+        font-size: 24px;
+
+        color: #0072ff;
+
+        margin-bottom: 8px;
+    }
+
+
+    .stat h3 {
+
+        color: #222;
+
+        font-size: 25px;
+
+        font-family: Arial, sans-serif;
+
+        font-style: normal;
+
+        line-height: normal;
+
+        margin-bottom: 3px;
+    }
+
+
+    .stat p {
+
+        color: #777;
+
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+
+        max-width: 1100px;
+
+        margin: 30px auto 55px;
+
+        padding: 40px 30px;
+
+        border-radius: 22px;
+
+        text-align: center;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                #0072ff,
+                #00c6ff,
+                #7b2ff7
+            );
+
+        background-size: 200% 200%;
+
+        animation:
+            gradientMove 8s ease infinite;
+
+        box-shadow:
+            0 15px 40px rgba(0, 114, 255, 0.3);
+
+        position: relative;
+
+        overflow: hidden;
+    }
+
+
+    .cta h2 {
+
+        font-family:
+            'Times New Roman',
+            Times,
+            serif;
+
+        font-style: italic;
+
+        font-size: 32px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .cta p {
+
+        font-size: 14px;
+
+        opacity: 0.9;
+
+        margin-bottom: 22px;
+    }
+
+
+    .cta-button {
+
+        display: inline-block;
+
+        padding: 12px 25px;
+
+        background: white;
+
+        color: #0072ff;
+
+        text-decoration: none;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+
+        font-size: 13px;
+
+        transition: 0.3s;
+    }
+
+
+    .cta-button:hover {
+
+        background: #111;
+
+        color: white;
+
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* =========================
+       NO RESULTS
+    ========================= */
+
+    .no-results {
+
+        display: none;
+
+        text-align: center;
+
+        padding: 40px;
+
+        color: #777;
+
+        grid-column: 1 / -1;
+    }
+
+
+    .no-results i {
+
+        font-size: 40px;
+
+        color: #00c6ff;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* =========================
+       SCROLL TOP
+    ========================= */
+
+    #scrollTop {
+
+        position: fixed;
+
+        right: 25px;
+
+        bottom: 25px;
+
+        width: 45px;
+
+        height: 45px;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                135deg,
+                #00c6ff,
+                #0072ff
+            );
+
+        color: white;
+
+        cursor: pointer;
+
+        display: none;
+
+        align-items: center;
+
+        justify-content: center;
+
+        box-shadow:
+            0 8px 20px rgba(0, 114, 255, 0.3);
+
+        z-index: 1000;
+
+        transition: 0.3s;
+    }
+
+
+    #scrollTop:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 12px 25px rgba(0, 114, 255, 0.4);
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes brandShine {
+
+        to {
+            background-position:
+                300% center;
+        }
+    }
+
+
+    @keyframes brandGlow {
+
+        0%,
+        100% {
+            background-position:
+                0% 50%;
+        }
+
+        50% {
+            background-position:
+                100% 50%;
+        }
+    }
+
+
+    @keyframes brandPulse {
+
+        0%,
+        100% {
+            box-shadow:
+                0 4px 18px
+                rgba(0, 114, 255, .5);
+        }
+
+        50% {
+            box-shadow:
+                0 4px 28px
+                rgba(0, 198, 255, .8);
+        }
+    }
+
+
+    @keyframes gradientMove {
+
+        0% {
+            background-position:
+                0% 50%;
+        }
+
+        50% {
+            background-position:
+                100% 50%;
+        }
+
+        100% {
+            background-position:
+                0% 50%;
+        }
+    }
+
+
+    @keyframes floatCircle {
+
+        0%,
+        100% {
+            transform:
+                translateY(0);
+        }
+
+        50% {
+            transform:
+                translateY(20px);
+        }
+    }
+
+
+    @keyframes cardAppear {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 900px) {
+
+        .service-grid {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+
+        .stats {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+
+        .services-hero,
+        .content,
+        .cta {
+
+            margin-left: 20px;
+
+            margin-right: 20px;
+        }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 640px) {
+
+        .header {
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 18px 15px;
+        }
+
+
+        .brand {
+
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+
+        .brand-name {
+
+            font-size: 30px;
+        }
+
+
+        .brand-tag {
+
+            font-size: 12px;
+        }
+
+
+        .brand-mark {
+
+            width: 50px;
+
+            height: 46px;
+
+            font-size: 16px;
+        }
+
+
+        .search-box {
+
+            width: 100%;
+        }
+
+
+        .nav ul {
+
+            gap: 3px;
+        }
+
+
+        .nav a {
+
+            padding:
+                8px 10px;
+
+            font-size: 12px;
+        }
+
+
+        .services-hero {
+
+            margin-top: 25px;
+
+            padding:
+                35px 20px;
+
+            border-radius: 18px;
+        }
+
+
+        .services-hero h1 {
+
+            font-size: 34px;
+        }
+
+
+        .services-hero p {
+
+            font-size: 13px;
+        }
+
+
+        .content {
+
+            margin:
+                20px 12px 35px;
+
+            padding:
+                25px 15px;
+
+            border-radius: 18px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 28px;
+        }
+
+
+        .service-grid {
+
+            grid-template-columns:
+                1fr;
+
+            gap: 17px;
+        }
+
+
+        .service-card {
+
+            padding: 25px 18px;
+        }
+
+
+        .service-card p {
+
+            min-height: auto;
+        }
+
+
+        .stats {
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 5px;
+        }
+
+
+        .stat h3 {
+
+            font-size: 21px;
+        }
+
+
+        .cta {
+
+            margin:
+                20px 12px 35px;
+
+            padding:
+                35px 20px;
+        }
+
+
+        .cta h2 {
+
+            font-size: 27px;
+        }
+
+
+        #scrollTop {
+
+            right: 15px;
+
+            bottom: 15px;
+        }
+    }
+
+</style>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="header">
+
+
+    <!-- BRAND -->
+
+    <div class="brand">
+
+        <div class="brand-mark">
+            AT
+        </div>
+
+        <div class="brand-text">
+
+            <div class="brand-name">
+                ABC Tech<span class="brand-dot">.</span>
+            </div>
+
+            <div class="brand-tag">
+                Powering Ideas Into Code
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="serviceSearch"
+            placeholder="Search services..."
+            aria-label="Search services">
+
+        <i class="fa fa-search"></i>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="nav">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html" class="active">
+                    SERVICES
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    CONTACT US
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    LOGIN
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="services-hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            WHAT WE DO
+        </span>
+
+        <h1>
+            Technology Solutions For Your Future
+        </h1>
+
+        <p>
+            From innovative websites and mobile applications
+            to cloud solutions, cybersecurity, and digital
+            transformation, ABC Tech provides modern technology
+            solutions designed around your goals.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================== -->
+
+<main class="content">
+
+
+    <div class="section-heading">
+
+        <h2>
+            Our Professional Services
+        </h2>
+
+        <p>
+            Explore our complete range of technology solutions.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid" id="serviceGrid">
+
+
+        <!-- 1 -->
+
+        <div class="service-card featured"
+            data-service="web development website web">
+
+            <span class="featured-label">
+                POPULAR
+            </span>
+
+            <div class="service-icon">
+                <i class="fa fa-code"></i>
+            </div>
+
+            <span class="service-tag">
+                DEVELOPMENT
+            </span>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+                Responsive websites and powerful web applications
+                built with modern, maintainable technologies.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="service-card"
+            data-service="app development mobile android ios">
+
+            <div class="service-icon">
+                <i class="fa fa-mobile"></i>
+            </div>
+
+            <span class="service-tag">
+                MOBILE
+            </span>
+
+            <h3>
+                App Development
+            </h3>
+
+            <p>
+                Cross-platform mobile applications designed
+                for smooth performance and engaging experiences.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="service-card"
+            data-service="custom software database backend">
+
+            <div class="service-icon">
+                <i class="fa fa-database"></i>
+            </div>
+
+            <span class="service-tag">
+                SOFTWARE
+            </span>
+
+            <h3>
+                Custom Software
+            </h3>
+
+            <p>
+                Tailored software systems and backend solutions
+                created around your unique business workflow.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="service-card"
+            data-service="support maintenance technical">
+
+            <div class="service-icon">
+                <i class="fa fa-life-ring"></i>
+            </div>
+
+            <span class="service-tag">
+                SUPPORT
+            </span>
+
+            <h3>
+                Support & Maintenance
+            </h3>
+
+            <p>
+                Continuous updates, bug fixes, monitoring,
+                optimization, and technical support.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="service-card"
+            data-service="cloud hosting storage deployment">
+
+            <div class="service-icon">
+                <i class="fa fa-cloud"></i>
+            </div>
+
+            <span class="service-tag">
+                CLOUD
+            </span>
+
+            <h3>
+                Cloud Solutions
+            </h3>
+
+            <p>
+                Scalable cloud infrastructure for hosting,
+                storage, deployment, and modern applications.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="service-card"
+            data-service="cyber security protection data">
+
+            <div class="service-icon">
+                <i class="fa fa-shield"></i>
+            </div>
+
+            <span class="service-tag">
+                SECURITY
+            </span>
+
+            <h3>
+                Cyber Security
+            </h3>
+
+            <p>
+                Security-focused solutions designed to protect
+                applications, systems, websites, and data.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div class="service-card"
+            data-service="data analytics reports dashboard">
+
+            <div class="service-icon">
+                <i class="fa fa-bar-chart"></i>
+            </div>
+
+            <span class="service-tag">
+                ANALYTICS
+            </span>
+
+            <h3>
+                Data Analytics
+            </h3>
+
+            <p>
+                Transform business data into useful insights
+                through reports, dashboards, and analytics.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 8 -->
+
+        <div class="service-card"
+            data-service="it consulting technology">
+
+            <div class="service-icon">
+                <i class="fa fa-cogs"></i>
+            </div>
+
+            <span class="service-tag">
+                CONSULTING
+            </span>
+
+            <h3>
+                IT Consulting
+            </h3>
+
+            <p>
+                Practical technology guidance to improve
+                your digital infrastructure and processes.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 9 -->
+
+        <div class="service-card"
+            data-service="ecommerce online store shopping">
+
+            <div class="service-icon">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+
+            <span class="service-tag">
+                E-COMMERCE
+            </span>
+
+            <h3>
+                E-Commerce Solutions
+            </h3>
+
+            <p>
+                Professional online stores with products,
+                shopping carts, checkout, and management.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 10 -->
+
+        <div class="service-card"
+            data-service="ui ux design interface">
+
+            <div class="service-icon">
+                <i class="fa fa-paint-brush"></i>
+            </div>
+
+            <span class="service-tag">
+                DESIGN
+            </span>
+
+            <h3>
+                UI/UX Design
+            </h3>
+
+            <p>
+                Clean, modern, intuitive interfaces focused
+                on usability and user experience.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 11 -->
+
+        <div class="service-card"
+            data-service="seo search engine optimization">
+
+            <div class="service-icon">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <span class="service-tag">
+                MARKETING
+            </span>
+
+            <h3>
+                SEO Services
+            </h3>
+
+            <p>
+                Search optimization strategies designed to
+                improve website visibility and discoverability.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- 12 -->
+
+        <div class="service-card"
+            data-service="digital transformation automation">
+
+            <div class="service-icon">
+                <i class="fa fa-refresh"></i>
+            </div>
+
+            <span class="service-tag">
+                TRANSFORMATION
+            </span>
+
+            <h3>
+                Digital Transformation
+            </h3>
+
+            <p>
+                Modernize business processes using efficient
+                digital tools, automation, and technology.
+            </p>
+
+            <a href="contact.html" class="learn-more">
+                Learn More
+                <i class="fa fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div class="no-results" id="noResults">
+
+            <i class="fa fa-search"></i>
+
+            <h3>
+                No services found
+            </h3>
+
+            <p>
+                Try searching for another service.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <div class="stats">
+
+
+        <div class="stat">
+
+            <i class="fa fa-code"></i>
+
+            <h3>
+                50+
+            </h3>
+
+            <p>
+                Projects Completed
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <i class="fa fa-users"></i>
+
+            <h3>
+                30+
+            </h3>
+
+            <p>
+                Happy Clients
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <i class="fa fa-cogs"></i>
+
+            <h3>
+                12+
+            </h3>
+
+            <p>
+                Technology Services
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <i class="fa fa-support"></i>
+
+            <h3>
+                24/7
+            </h3>
+
+            <p>
+                Technical Support
+            </p>
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta">
+
+    <h2>
+        Have a Project in Mind?
+    </h2>
+
+    <p>
+        Let's turn your idea into a powerful digital solution.
+    </p>
+
+    <a href="contact.html" class="cta-button">
+        <i class="fa fa-paper-plane"></i>
+        Contact ABC Tech
+    </a>
+
+</section>
+
+
+<!-- =========================
+     SCROLL TOP
+========================== -->
+
+<button id="scrollTop" aria-label="Scroll to top">
+
+    <i class="fa fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
